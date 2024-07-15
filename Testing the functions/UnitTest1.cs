@@ -8,165 +8,168 @@ namespace Testing_the_functions
         [Test]
         public void Test1_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(1, 1);
-            int expected = 2;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(1, -1));
         }
         [Test]
         public void Test2_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(-1, 1);
-            int expected = 0;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-1, 1));
         }
         [Test]
         public void Test3_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(1, -1);
-            int expected = 0;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-1, -1));
         }
         [Test]
         public void Test4_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(-1, -1);
-            int expected = -2;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-10, 10));
         }
         [Test]
         public void Test5_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(10, 10);
-            int expected = 20;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(10, -10));
         }
         [Test]
         public void Test6_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(100, 100);
-            int expected = 200;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-10, -10));
         }
         [Test]
         public void Test7_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(11, 11);
-            int expected = 22;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-100, 100));
         }
         [Test]
         public void Test8_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(111, 111);
-            int expected = 222;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(100, -100));
         }
         [Test]
         public void Test9_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(1234, 4321);
-            int expected = 5555;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-100, -100));
         }
         [Test]
         public void Test10_Additions()
         {
-            var func = new Function_to_test();
-            int result = func.Additions(0987, 7890);
-            int expected = 8877;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<Exception>(() => Function_to_test.Additions(-1, -1));
         }
     }
-    public class Testing_Division
+    public class Testing_Divisions
     {
         [Test]
         public void Test1_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(1, 1);
-            int expected = 2;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(1, 0));
         }
         [Test]
         public void Test2_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(0, 1);
-            int expected = 0;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, 1));
         }
         [Test]
         public void Test3_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(1, 0);
-            int expected = 0;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, 0));
         }
         [Test]
         public void Test4_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(0, 0);
-            int expected = -2;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(10, 0));
         }
         [Test]
         public void Test5_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(10, 10);
-            int expected = 1;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, 10));
         }
         [Test]
         public void Test6_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(100, 100);
-            int expected = 1;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(-1, 0));
         }
         [Test]
         public void Test7_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(11, 11);
-            int expected = 1;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, -1));
         }
         [Test]
         public void Test8_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(111, 111);
-            int expected = 1;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(100, 0));
         }
         [Test]
         public void Test9_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(10, 3);
-            int expected = 10 / 3;
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, 100));
         }
         [Test]
         public void Test10_Divisions()
         {
-            var func = new Function_to_test();
-            int result = func.Divisions(10, 5);
-            int expected = 2;
-            Assert.That(result, Is.EqualTo(expected));
+           Assert.Throws<DivideByZeroException>(() => Function_to_test.Divisions(0, 0));
+        }
+    }
+    public class Testing_Average
+    {
+        [Test]
+        public void Test1_Average()
+        {
+            int[] numbers = { };
+            Assert.Throws<ArithmeticException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test2_Average()
+        {
+            int[] numbers = null;
+            Assert.Throws<ArithmeticException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test3_Average()
+        {
+            int[] numbers = { 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test4_Average()
+        {
+            int[] numbers = { 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test5_Average()
+        {
+            int[] numbers = { 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test6_Average()
+        {
+            int[] numbers = { 0, 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test7_Average()
+        {
+            int[] numbers = { 0, 0, 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test8_Average()
+        {
+            int[] numbers = { 0, 0, 0, 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test9_Average()
+        {
+            int[] numbers = { 0, 0, 0, 0, 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+        }
+        [Test]
+        public void Test10_Average()
+        {
+            int[] numbers = { 0, 0, 0, 0, 0, 0, 0, 0 };
+            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
         }
     }
 }
