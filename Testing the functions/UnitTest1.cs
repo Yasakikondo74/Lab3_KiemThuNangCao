@@ -129,47 +129,51 @@ namespace Testing_the_functions
             int[] numbers = { 0 };
             Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
         }
+    }
+    public class Testing_Positions_Integers
+    {
         [Test]
-        public void Test4_Average()
+        public void Test1_Positions_Integers()
         {
-            int[] numbers = { 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            int[] array = { };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.Int_Pos(array, 1));
         }
+
         [Test]
-        public void Test5_Average()
+        public void Test2_Positions_Integers()
         {
-            int[] numbers = { 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            int[] array = { 1, 2, 3, 4, 5 };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.Int_Pos(array, -1));
         }
+
         [Test]
-        public void Test6_Average()
+        public void Test3_Positions_Integers()
         {
-            int[] numbers = { 0, 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            int[] array = { 1, 2, 3, 4, 5 };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.Int_Pos(array, 5));
         }
+    }
+    public class Testing_Positions_String
+    {
         [Test]
-        public void Test7_Average()
+        public void Test1_Positions_Strings()
         {
-            int[] numbers = { 0, 0, 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            string[] array = { };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.String_Pos(array, 1));
         }
+
         [Test]
-        public void Test8_Average()
+        public void Test2_Positions_Strings()
         {
-            int[] numbers = { 0, 0, 0, 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            string[] array = { "John", "Peter", "David", "Carol", "Maria" };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.String_Pos(array, -1));
         }
+
         [Test]
-        public void Test9_Average()
+        public void Test3_Positions_Strings()
         {
-            int[] numbers = { 0, 0, 0, 0, 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
-        }
-        [Test]
-        public void Test10_Average()
-        {
-            int[] numbers = { 0, 0, 0, 0, 0, 0, 0, 0 };
-            Assert.Throws<DivideByZeroException>(() => Function_to_test.Average(numbers));
+            string[] array = { "John", "Peter", "David", "Carol", "Maria" };
+            Assert.Throws<IndexOutOfRangeException>(() => Function_to_test.String_Pos(array, 5));
         }
     }
 }

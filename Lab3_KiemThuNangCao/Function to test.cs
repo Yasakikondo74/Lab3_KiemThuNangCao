@@ -1,4 +1,6 @@
-﻿namespace Lab3_KiemThuNangCao
+﻿using System;
+
+namespace Lab3_KiemThuNangCao
 {
     public class Function_to_test
     {
@@ -58,6 +60,22 @@
             }
             float average = sum / Array_of_numbers.Length;
             return average;
+        }
+        public static int Int_Pos(int[] Array_of_numbers, int pos)
+        {
+            if (pos < 0 || pos >= Array_of_numbers.Length)
+            {
+                throw new IndexOutOfRangeException($"Index {pos} nằm ngoài phạm vi.");
+            }
+            return Array_of_numbers[pos];
+        }
+        public static string String_Pos(string[] Array_of_name, int pos)
+        {
+            if (pos < 0 || pos >= Array_of_name.Length)
+            {
+                throw new IndexOutOfRangeException($"Index {pos} không nằm trong danh sách.");
+            }
+            return Array_of_name[pos];
         }
     }
 }
